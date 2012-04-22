@@ -1,12 +1,19 @@
 package placements
 
 class PlacementOpportunity {
+
 	static hasMany = [applications:Application]
 	
 	String jobTitle
 	String companyName
-	String status
+	Status status
 
     static constraints = {
+    
+    companyName()
+    jobTitle()
+    applications()
+    status()
+    
     }
 }
