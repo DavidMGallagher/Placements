@@ -24,13 +24,15 @@
 				<thead>
 					<tr>
 					
-						<th><g:message code="application.code.label" default="Code" /></th>
+						<th><g:message code="application.student.label" default="Student" /></th>
 					
 						<th><g:message code="application.jobTitle.label" default="Job Title" /></th>
 					
-						<th><g:message code="application.student.label" default="Student" /></th>
+						<th><g:message code="application.code.label" default="Code" /></th>
 					
-						<g:sortableColumn property="timestamp" title="${message(code: 'application.timestamp.label', default: 'Timestamp')}" />
+						<g:sortableColumn property="dateCreated" title="${message(code: 'application.dateCreated.label', default: 'Date Created')}" />
+					
+						<g:sortableColumn property="lastUpdated" title="${message(code: 'application.lastUpdated.label', default: 'Last Updated')}" />
 					
 					</tr>
 				</thead>
@@ -38,13 +40,15 @@
 				<g:each in="${applicationInstanceList}" status="i" var="applicationInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${applicationInstance.id}">${fieldValue(bean: applicationInstance, field: "code")}</g:link></td>
+						<td><g:link action="show" id="${applicationInstance.id}">${fieldValue(bean: applicationInstance, field: "student.name")}</g:link></td>
 					
-						<td>${fieldValue(bean: applicationInstance, field: "jobTitle")}</td>
+						<td>${fieldValue(bean: applicationInstance, field: "jobTitle.jobTitle")}</td>
 					
-						<td>${fieldValue(bean: applicationInstance, field: "student")}</td>
+						<td>${fieldValue(bean: applicationInstance, field: "code.code")}</td>
 					
-						<td>${fieldValue(bean: applicationInstance, field: "timestamp")}</td>
+						<td><g:formatDate date="${applicationInstance.dateCreated}" /></td>
+					
+						<td><g:formatDate date="${applicationInstance.lastUpdated}" /></td>
 					
 					</tr>
 				</g:each>

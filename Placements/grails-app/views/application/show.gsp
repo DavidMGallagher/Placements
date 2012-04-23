@@ -23,11 +23,11 @@
 			</g:if>
 			<ol class="property-list application">
 			
-				<g:if test="${applicationInstance?.code}">
+				<g:if test="${applicationInstance?.student}">
 				<li class="fieldcontain">
-					<span id="code-label" class="property-label"><g:message code="application.code.label" default="Code" /></span>
+					<span id="student-label" class="property-label"><g:message code="application.student.label" default="Student" /></span>
 					
-						<span class="property-value" aria-labelledby="code-label"><g:link controller="status" action="show" id="${applicationInstance?.code?.id}">${applicationInstance?.code?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="student-label"><g:link controller="student" action="show" id="${applicationInstance?.student?.id}">${applicationInstance?.student?.name?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -36,25 +36,34 @@
 				<li class="fieldcontain">
 					<span id="jobTitle-label" class="property-label"><g:message code="application.jobTitle.label" default="Job Title" /></span>
 					
-						<span class="property-value" aria-labelledby="jobTitle-label"><g:link controller="placementOpportunity" action="show" id="${applicationInstance?.jobTitle?.id}">${applicationInstance?.jobTitle?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="jobTitle-label"><g:link controller="placementOpportunity" action="show" id="${applicationInstance?.jobTitle?.id}">${applicationInstance?.jobTitle?.jobTitle?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${applicationInstance?.student}">
+				<g:if test="${applicationInstance?.code}">
 				<li class="fieldcontain">
-					<span id="student-label" class="property-label"><g:message code="application.student.label" default="Student" /></span>
+					<span id="code-label" class="property-label"><g:message code="application.code.label" default="Code" /></span>
 					
-						<span class="property-value" aria-labelledby="student-label"><g:link controller="student" action="show" id="${applicationInstance?.student?.id}">${applicationInstance?.student?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="code-label"><g:link controller="status" action="show" id="${applicationInstance?.code?.id}">${applicationInstance?.code?.code?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${applicationInstance?.timestamp}">
+				<g:if test="${applicationInstance?.dateCreated}">
 				<li class="fieldcontain">
-					<span id="timestamp-label" class="property-label"><g:message code="application.timestamp.label" default="Timestamp" /></span>
+					<span id="dateCreated-label" class="property-label"><g:message code="application.dateCreated.label" default="Date Created" /></span>
 					
-						<span class="property-value" aria-labelledby="timestamp-label"><g:fieldValue bean="${applicationInstance}" field="timestamp"/></span>
+						<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${applicationInstance?.dateCreated}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${applicationInstance?.lastUpdated}">
+				<li class="fieldcontain">
+					<span id="lastUpdated-label" class="property-label"><g:message code="application.lastUpdated.label" default="Last Updated" /></span>
+					
+						<span class="property-value" aria-labelledby="lastUpdated-label"><g:formatDate date="${applicationInstance?.lastUpdated}" /></span>
 					
 				</li>
 				</g:if>

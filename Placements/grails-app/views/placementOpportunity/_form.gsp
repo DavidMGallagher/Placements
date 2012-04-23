@@ -40,6 +40,6 @@
 		<g:message code="placementOpportunity.status.label" default="Status" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="status" name="status.id" from="${placements.Status.list()}" optionKey="id" required="" value="${placementOpportunityInstance?.status?.id}" class="many-to-one"/>
+	<g:select id="status" name="status.id" from="${placements.Status.list()}" optionKey="id" required="" value="${placementOpportunityInstance?.status?.id}" class="many-to-one" optionValue="code"/>
 </div>
 

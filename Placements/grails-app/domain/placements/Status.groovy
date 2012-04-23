@@ -6,5 +6,8 @@ class Status {
 	String description
 
     static constraints = {
+    
+    	code()
+    	description()
     }
 }
