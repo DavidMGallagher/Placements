@@ -31,6 +31,25 @@ class PlacementOpportunityController {
 		}
 	}
 	
+	
+	def listApplicants() {
+		def response = [:]
+		response.jobTitle = 'Programmer'
+		
+	def jobTitle = PlacementOpportunity.get(1)
+	response.applicants=[]
+	jobTitle.applications.each {
+	response.applicants.add([studentName:it.student.name])
+	}
+	
+	withFormat {
+	html response
+	json { render response as JSON }
+	xml { render response as XML }
+		}
+	}
+	
+	
     def list() {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         [placementOpportunityInstanceList: PlacementOpportunity.list(params), placementOpportunityInstanceTotal: PlacementOpportunity.count()]
