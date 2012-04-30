@@ -1,6 +1,7 @@
 package placements
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.converters.*;
 
 class PlacementOpportunityController {
 
@@ -10,6 +11,26 @@ class PlacementOpportunityController {
         redirect(action: "list", params: params)
     }
 
+	def listOpenPlacements() {
+		def response = [:]
+		response.status = 'Open'
+		
+	def status = Status.findByCode('Open')
+		
+	def placements=PlacementOpportunity.findAllByStatus(status)
+		response.placements = []
+		placements.each{
+		response.placements.add([companyName:it.companyName, jobTitle:it.jobTitle])
+		
+		}
+		
+		withFormat {
+		html response
+		json { render response as JSON }
+		xml { render response as XML }
+		}
+	}
+	
     def list() {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         [placementOpportunityInstanceList: PlacementOpportunity.list(params), placementOpportunityInstanceTotal: PlacementOpportunity.count()]
