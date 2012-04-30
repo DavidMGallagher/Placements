@@ -41,11 +41,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${applicationInstance?.code}">
+				<g:if test="${applicationInstance?.status}">
 				<li class="fieldcontain">
-					<span id="code-label" class="property-label"><g:message code="application.code.label" default="Code" /></span>
+					<span id="status-label" class="property-label"><g:message code="application.status.label" default="Status" /></span>
 					
-						<span class="property-value" aria-labelledby="code-label"><g:link controller="status" action="show" id="${applicationInstance?.code?.id}">${applicationInstance?.code?.code?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="status-label"><g:link controller="status" action="show" id="${applicationInstance?.status?.id}">${applicationInstance?.status?.code?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

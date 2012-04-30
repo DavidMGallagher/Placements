@@ -91,6 +91,7 @@
 				<li><g:link controller="PlacementOpportunity">Placement Opportunity Controller</g:link></li>
 				<li><g:link controller="Status">Status Controller</g:link></li>
 				<li><g:link controller="Student">Student Controller</g:link></li>
+				<li><g:link controller="Apply">Apply Controller</g:link></li>
 				</ul>
 			</div>
 		</div>

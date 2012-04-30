@@ -18,11 +18,11 @@
 	<g:select id="jobTitle" name="jobTitle.id" from="${placements.PlacementOpportunity.list()}" optionKey="id" required="" value="${applicationInstance?.jobTitle?.id}" class="many-to-one" optionValue="jobTitle"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: applicationInstance, field: 'code', 'error')} required">
-	<label for="code">
-		<g:message code="application.code.label" default="Code" />
+<div class="fieldcontain ${hasErrors(bean: applicationInstance, field: 'status', 'error')} required">
+	<label for="status">
+		<g:message code="application.status.label" default="Status" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="code" name="code.id" from="${placements.Status.list()}" optionKey="id" required="" value="${applicationInstance?.code?.id}" class="many-to-one" optionValue="code"/>
+	<g:select id="status" name="status.id" from="${placements.Status.list()}" optionKey="id" required="" value="${applicationInstance?.status?.id}" class="many-to-one" optionValue="code"/>
 </div>
 

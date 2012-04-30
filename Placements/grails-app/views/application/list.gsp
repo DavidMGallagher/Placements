@@ -28,7 +28,7 @@
 					
 						<th><g:message code="application.jobTitle.label" default="Job Title" /></th>
 					
-						<th><g:message code="application.code.label" default="Code" /></th>
+						<th><g:message code="application.status.label" default="Status" /></th>
 					
 						<g:sortableColumn property="dateCreated" title="${message(code: 'application.dateCreated.label', default: 'Date Created')}" />
 					
@@ -44,7 +44,7 @@
 					
 						<td>${fieldValue(bean: applicationInstance, field: "jobTitle.jobTitle")}</td>
 					
-						<td>${fieldValue(bean: applicationInstance, field: "code.code")}</td>
+						<td>${fieldValue(bean: applicationInstance, field: "status.code")}</td>
 					
 						<td><g:formatDate date="${applicationInstance.dateCreated}" /></td>
 					

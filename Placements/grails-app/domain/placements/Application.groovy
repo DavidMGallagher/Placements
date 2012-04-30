@@ -1,7 +1,7 @@
 package placements
 
 class Application {
-	static belongsTo = [student:Student, jobTitle:PlacementOpportunity, code:Status]	
+	static belongsTo = [student:Student, jobTitle:PlacementOpportunity, status:Status]	
 	
 	Date dateCreated
 	Date lastUpdated
@@ -10,7 +10,7 @@ class Application {
     
     student()
     jobTitle()
-    code()
+    status()
     dateCreated()
     lastUpdated()
     
