@@ -2,7 +2,7 @@ package placements
 
 class PlacementOpportunity {
 
-	static hasMany = [applications:Application]
+	static hasMany = [applications:Student]
 	
 	String jobTitle
 	String companyName

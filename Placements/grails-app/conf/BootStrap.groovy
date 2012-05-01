@@ -23,6 +23,8 @@ class BootStrap {
     
     def status8 = new Status(code:'Open', description:'Application is open to applicants').save();
     
+    def status9 = new Status(code:'Closed', description:'Application is closed to applicants').save();
+    
     def student1 = new Student(name:'Steve Williams', courseCode:'COMP', applications:'', notes:'').save();
     
     def student2 = new Student(name:'David Roberts', courseCode:'MCOMP', applications:'', notes:'').save();
@@ -33,23 +35,23 @@ class BootStrap {
     
     def student5 = new Student(name:'Sarah Taylor', courseCode:'COMP', applications:'', notes:'').save();
     
-    def placementOpportunity1 = new PlacementOpportunity(companyName:'ABC Design and Development', jobTitle:'Designer', status:status1).save();
+    def placementOpportunity1 = new PlacementOpportunity(companyName:'ABC Design and Development', jobTitle:'Designer', status:status8).save();
     
     def placementOpportunity2 = new PlacementOpportunity(companyName:'Lloyds Telecommunication', jobTitle:'Database Administrator', status:status8).save();
     
-    def placementOpportunity3 = new PlacementOpportunity(companyName:'Williams Development', jobTitle:'Programmer', status:status1).save();
+    def placementOpportunity3 = new PlacementOpportunity(companyName:'Williams Development', jobTitle:'Programmer', status:status8).save();
     
-    def placementOpportunity4 = new PlacementOpportunity(companyName:'ZYX Computing', jobTitle:'Graduate Java Developer', status:status8).save();
+    def placementOpportunity4 = new PlacementOpportunity(companyName:'ZYX Computing', jobTitle:'Graduate Java Developer', status:status9).save();
     
     def application1 = new Application(student:student1, jobTitle:placementOpportunity1, status:status3, dateCreated:new Date(), lastUpdated:new Date()).save();
     
-	def application2 = new Application(student:student2, jobTitle:placementOpportunity2, status:status8, dateCreated:new Date(), lastUpdated:new Date()).save();
+	def application2 = new Application(student:student2, jobTitle:placementOpportunity2, status:status2, dateCreated:new Date(), lastUpdated:new Date()).save();
     
     def application3 = new Application(student:student3, jobTitle:placementOpportunity3, status:status1, dateCreated: new Date(), lastUpdated:new Date()).save();
     
-    def application4 = new Application(student:student4, jobTitle:placementOpportunity4, status:status8, dateCreated:new Date(), lastUpdated:new Date()).save();
+    def application4 = new Application(student:student4, jobTitle:placementOpportunity3, status:status2, dateCreated:new Date(), lastUpdated:new Date()).save();
     
-    def application5 = new Application(student:student5, jobTitle:placementOpportunity1, status:status8, dateCreated:new Date(), lastUpdated:new Date()).save();
+    def application5 = new Application(student:student5, jobTitle:placementOpportunity1, status:status7, dateCreated:new Date(), lastUpdated:new Date()).save();
     
     }
     def destroy = {
