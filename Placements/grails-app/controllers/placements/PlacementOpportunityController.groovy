@@ -27,8 +27,8 @@ class PlacementOpportunityController {
 	html response
 	json { render response as JSON }
 	xml { render response as XML }
+		}
 	}
-}
 
 	def listApplicants() {
 	def response = [:]

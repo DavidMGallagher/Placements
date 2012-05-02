@@ -81,8 +81,7 @@
 		</style>
 	</head>
 	<body>
-			<h1>Placements</h1>
-			<p>Grails application for student placements</p>
+			<center><h1>A Student Placement Web Service that uses Groovy and Grails<h1></center>
 
 			<div id="controller-list" role="navigation">
 				<h2>Available Controllers:</h2>

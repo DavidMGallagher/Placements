@@ -5,3 +5,11 @@ GitHub ID: DavidMGallagher
 Sheffield Hallam University
 Web Architectures
 Assignment 3
+
+In order to clone and run the application please complete the following:
+
+1)	Create a folder on your local machine and navigate in to this using the ‘cd….’ command. 
+2)	Type ‘https://DavidMGallagher@github.com/DavidMGallagher/Placements.git’ in to your terminal window and press enter. This will clone the project in to the new folder. 
+3)	Navigate in to the develop branch using ‘git checkout develop’.
+4)	Navigate in to the folder again using the ‘cd…’ command and then type ‘grails run-app’. This will compile and run the application. 
+
